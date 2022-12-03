@@ -1,0 +1,261 @@
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+   
+            <%- include('../include/_menu') %> 
+        <!-- Layout container -->
+        <div class="layout-page">
+          <%- include('../include/_navbar') %>
+        <div class="content-wrapper">
+            <!-- Content -->
+
+            <div class="container-xxl flex-grow-1 container-p-y">
+                <div class="row">
+                  
+                  <div class="col-lg-4 col-md-4 order-1">
+                    <div class="row">
+                      <div class="col-lg-6 col-md-12 col-6 mb-4">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="card-title d-flex align-items-start justify-content-between">
+                              <div class="avatar flex-shrink-0">
+                                <img
+                                  src="img/icons/unicons/user.png"
+                                  alt="chart success"
+                                  class="rounded"
+                                />
+                              </div>
+                              <div class="dropdown">
+                                <button
+                                  class="btn p-0"
+                                  type="button"
+                                  id="cardOpt3"
+                                  data-bs-toggle="dropdown"
+                                  aria-haspopup="true"
+                                  aria-expanded="false"
+                                >
+                                  <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt3">
+                                  <a class="dropdown-item" href="/list-user">View More</a>
+                            
+                                </div>
+                              </div>
+                            </div>
+                            <span class="fw-semibold d-block mb-1">User</span>
+                            <small>Qty:</small><h4 class="card-title mb-2"><%= users %></h4>
+          
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6 col-md-12 col-6 mb-4">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="card-title d-flex align-items-start justify-content-between">
+                              <div class="avatar flex-shrink-0">
+                                <img
+                                  src="img/icons/unicons/product.png"
+                                  alt="Credit Card"
+                                  class="rounded"
+                                />
+                              </div>
+                              <div class="dropdown">
+                                <button
+                                  class="btn p-0"
+                                  type="button"
+                                  id="cardOpt6"
+                                  data-bs-toggle="dropdown"
+                                  aria-haspopup="true"
+                                  aria-expanded="false"
+                                >
+                                  <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt6">
+                                  <a class="dropdown-item" href="/list-product-detail">View More</a>
+                                 
+                                </div>
+                              </div>
+                            </div>
+                            <span class="fw-semibold d-block mb-1">Product</span>
+                            <small>Qty:</small><h4 class="card-title text-nowrap mb-1"><%= productDetails %></h4>
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                 
+                  <div class="col-12 col-md-8 col-lg-4 order-3 order-md-2">
+                    <div class="row">
+                      <div class="col-6 mb-4">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="card-title d-flex align-items-start justify-content-between">
+                              <div class="avatar flex-shrink-0">
+                                <img src="img/icons/unicons/shopping-bag.png" alt="Credit Card" class="rounded" />
+                              </div>
+                              <div class="dropdown">
+                                <button
+                                  class="btn p-0"
+                                  type="button"
+                                  id="cardOpt4"
+                                  data-bs-toggle="dropdown"
+                                  aria-haspopup="true"
+                                  aria-expanded="false"
+                                >
+                                  <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
+                                  <a class="dropdown-item" href="/list-order">View More</a>
+                                 
+                                </div>
+                              </div>
+                            </div>
+                            <%
+                            const totalPrice = new Intl.NumberFormat('en-US', {
+                              style: 'currency',
+                              currency: 'VND',
+                            })
+                            %>
+                            <span class="fw-semibold d-block mb-1">Order</span>
+                            <small>Qty:</small><h4 class="card-title text-nowrap mb-2"><%= orders %></h4>
+                            <% 
+                            const formatter = new Intl.NumberFormat('en-US', {
+                              maximumFractionDigits: 2,
+                            })
+                         
+                            %>
+                           
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-6 mb-4">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="card-title d-flex align-items-start justify-content-between">
+                              <div class="avatar flex-shrink-0">
+                                <img src="img/icons/unicons/comment.png" alt="Credit Card" class="rounded" />
+                              </div>
+                              <div class="dropdown">
+                                <button
+                                  class="btn p-0"
+                                  type="button"
+                                  id="cardOpt1"
+                                  data-bs-toggle="dropdown"
+                                  aria-haspopup="true"
+                                  aria-expanded="false"
+                                >
+                                  <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="cardOpt1">
+                                  <a class="dropdown-item" href="/list-comment">View More</a>
+                                
+                                </div>
+                              </div>
+                            </div>
+                            <span class="fw-semibold d-block mb-1">Comment</span>
+                            <small>Qty:</small><h4 class="card-title mb-2"><%= comments %></h4>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                
+                  <!-- Expense Overview -->
+                  <div class="col-md-6 col-lg-4 order-1 mb-4">
+                    <div class="card h-100">
+                      <div class="card-header">
+                        <ul class="nav nav-pills" role="tablist">
+                          <li class="nav-item">
+                            <button
+                              type="button"
+                              class="nav-link active"
+                              role="tab"
+                              data-bs-toggle="tab"
+                              data-bs-target="#navs-tabs-line-card-income"
+                              aria-controls="navs-tabs-line-card-income"
+                              aria-selected="true"
+                            >
+                              Income
+                            </button>
+                          </li>
+                          <li class="nav-item">
+                            <button type="button" class="nav-link" role="tab">Expenses</button>
+                          </li>
+                          <li class="nav-item">
+                            <button type="button" class="nav-link" role="tab">Profit</button>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="card-body px-0">
+                        <div class="tab-content p-0">
+                          <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
+                            <div class="d-flex p-4 pt-3">
+                              <div class="avatar flex-shrink-0 me-3">
+                                <img src="img/icons/unicons/wallet.png" alt="User" />
+                              </div>
+                              <div>
+                                <small class="text-muted d-block">Total Balance</small>
+                                <div class="d-flex align-items-center">
+                                  <%
+                                  if(ordersInCome[1]._id > ordersInCome[0]._id) {
+                                  %>
+                                    <h6 class="mb-0 me-1"><%= totalPrice.format(ordersInCome[1].total) %></h6>
+                                    <%
+                                  }     
+                                  else{
+                                    %>
+                                    <h6 class="mb-0 me-1"><%= totalPrice.format(ordersInCome[0].total) %></h6>
+                                    <%
+                                  }
+                                  %>
+                                 
+                          <%
+                          let percent = 0;
+                          if(ordersInCome[1]._id > ordersInCome[0]._id) {
+                            percent = (ordersInCome[1].total*100)/ordersInCome[0].total-100;
+                          }     
+                          else{
+                            percent = (ordersInCome[0].total*100)/ordersInCome[1].total-100;
+                          }
+                          if(percent>0)
+                          {
+                            %>
+                            <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +<%= (formatter.format(percent)) %>%</small>
+                            <%
+                          }else{
+                            %>
+                            <small class="text-danger fw-semibold"><i class="bx bx-down-arrow-alt"></i> <%= (formatter.format(percent)) %>%</small>
+                            <%
+                          }
+                            %>
+                                
+                                </div>
+                              </div>
+                            </div>
+                            <div id="incomeChart"></div>
+                            <div class="d-flex justify-content-center pt-4 gap-2">
+                              <div class="flex-shrink-0">
+                                <div id="expensesOfWeek"></div>
+                              </div>
+                              <div>
+                                <p class="mb-n1 mt-1">Expenses This Week</p>
+                                <small class="text-muted">$39 less than last week</small>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--/ Expense Overview -->
+  
+                </div>
+              </div>
+    
+            <!-- / Content -->
+        </div>

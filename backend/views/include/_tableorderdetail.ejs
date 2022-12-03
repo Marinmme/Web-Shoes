@@ -1,0 +1,79 @@
+<body>
+  <!-- Layout wrapper -->
+  <div class="layout-wrapper layout-content-navbar">
+    <div class="layout-container">
+      <%- include('../include/_menu') %>
+      <!-- Layout container -->
+      <div class="layout-page">
+        <%- include('../include/_navbar') %>
+        <div class="content-wrapper">
+          <!-- Content -->
+
+          <div class="container-xxl flex-grow-1 container-p-y">
+            
+            <!-- Basic Bootstrap Table -->
+            <div class="card">
+              <h5 class="card-header">Order detail</h5>
+              <div class="table-responsive text-nowrap">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Number</th>
+                      <th>Product</th>
+                      <th>Image</th>
+                      <th>Color</th>
+                      <th>Size</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                      <th>Total</th>
+                     
+                    </tr>
+                  </thead>
+                  <tbody class="table-border-bottom-0">
+                    <% const formatter = new Intl.NumberFormat('en-US', {
+                      style: 'currency',
+                      currency: 'VND',
+                    })
+                     for(var i = 0; i < order.products.length; i++) { %>
+                    <tr>
+                      <td><%= i+1 %></td>
+                      <td><%= order.products[i].productDetail.product.name %></td>
+
+                      <td>
+                        <ul
+                          class="list-unstyled users-list m-0 avatar-group d-flex align-items-center"
+                        >                
+                          <li
+                            data-bs-toggle="tooltip"
+                            data-popup="tooltip-custom"
+                            data-bs-placement="top"
+                            class="avatar avatar-xs pull-up"
+                            title="<%= order.products[i].productDetail.product.name %>"
+                          >
+                          <a href= <%= order.products[i].productDetail.productImage.split(",")[0] %>>
+                            <img
+                              src=<%= order.products[i].productDetail.productImage.split(",")[0] %>
+                              alt="Avatar"
+                              class="rounded-circle"
+                            />
+                          </a>
+                          </li>          
+                        </ul>
+                      </td>
+                      <td><%= order.products[i].productDetail.color %></td>
+                      <td><%= order.products[i].size %></td>
+                      <td><%= formatter.format(order.products[i].price) %></td>
+                      <td><%= order.products[i].quantity %></td>
+                      <td><%= formatter.format(order.products[i].total) %></td>
+                    </tr>
+                    <% } %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- / Content -->
+     
+  
+
